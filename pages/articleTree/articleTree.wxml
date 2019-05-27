@@ -1,1 +1,8 @@
-<view>体系</view>
+<block wx:for="{{trees}}" wx:key="id">
+  <view class='card'>
+    <view class='title'>{{item.name}}</view>
+    <block wx:for="{{item.children}}" wx:key="id">
+      <text class='content'>{{item.name}} </text>
+    </block>
+  </view>
+</block>

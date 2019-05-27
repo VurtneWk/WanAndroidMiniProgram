@@ -1,1 +1,26 @@
-<view>首页</view>
+<!--轮播图-->
+<view class='cont'></view>
+
+<swiper indicator-dots='true' autoplay='true' interval='3000' circular='true' indicator-color='#FFF' indicator-active-color='#0288D1' bindtap=''>
+  <block wx:for="{{banners}}" wx:key="banner">
+    <swiper-item>
+      <image src='{{item.imagePath}}'></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--文章列表-->
+<view class='articleList'>
+  <block wx:for="{{articles}}" wx:key="article">
+    <view class='card'>
+      <view class='itemRow'>
+        <text class='articleAuthor'>{{item.author}}</text>
+        <text class='articleNiceDate'>{{item.niceDate}}</text>
+      </view>
+      <view class='itemTitle'>{{item.title}}</view>
+      <view class='itemRow'>
+        <text class='itemSuperChapterName'>{{superChapterName}}</text>
+      </view>
+    </view>
+  </block>
+</view>

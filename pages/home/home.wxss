@@ -1,0 +1,22 @@
+.card {
+  margin: 8px;
+  border: 1px;
+  border-color: #2c2c2c;
+  box-shadow:  2px 2px 2px 2px #dddddd;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.itemRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10rpx;
+}
+
+.articleAuthor{
+  color: #2c2c2c;
+  font-size: 0.8rem;
+  
+}

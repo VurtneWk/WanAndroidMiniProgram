@@ -1,52 +1,59 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/articleTree/articleTree",
     "pages/navigation/navigation",
     "pages/project/project",
     "pages/my/my",
     "pages/index/index",
-   
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#0288D1",
     "navigationBarTitleText": "WanAndroid",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/home/home",
-      "text": "首页",
-      "iconPath": "pages/images/home_normal.png",
-      "selectedIconPath": "pages/images/home_selected.png"
-    },
-    {
-      "pagePath": "pages/articleTree/articleTree",
-      "text": "体系",
-      "iconPath": "pages/images/articleTree_normal.png",
-      "selectedIconPath": "pages/images/articleTree_selected.png"
-    },
-    {
-      "pagePath": "pages/navigation/navigation",
-      "text": "导航",
-      "iconPath": "pages/images/navigation_normal.png",
-      "selectedIconPath": "pages/images/navigation_selected.png"
-    },
-    {
-      "pagePath": "pages/project/project",
-      "text": "项目",
-      "iconPath": "pages/images/project_normal.png",
-      "selectedIconPath": "pages/images/project_selected.png"
-    },
-    {
-      "pagePath": "pages/my/my",
-      "text": "我的",
-      "iconPath": "pages/images/my_normal.png",
-      "selectedIconPath": "pages/images/my_selected.png"
-    }
-    
+    "color": "#2c2c2c",
+    "selectedColor": "#0288D1",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/images/home_normal.png",
+        "selectedIconPath": "pages/images/home_selected.png"
+      },
+      {
+        "pagePath": "pages/articleTree/articleTree",
+        "text": "体系",
+        "iconPath": "pages/images/articleTree_normal.png",
+        "selectedIconPath": "pages/images/articleTree_selected.png"
+      },
+      {
+        "pagePath": "pages/navigation/navigation",
+        "text": "导航",
+        "iconPath": "pages/images/navigation_normal.png",
+        "selectedIconPath": "pages/images/navigation_selected.png"
+      },
+      {
+        "pagePath": "pages/project/project",
+        "text": "项目",
+        "iconPath": "pages/images/project_normal.png",
+        "selectedIconPath": "pages/images/project_selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "pages/images/my_normal.png",
+        "selectedIconPath": "pages/images/my_selected.png"
+      }
     ]
-  }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "sitemapLocation": "sitemap.json"
 }
