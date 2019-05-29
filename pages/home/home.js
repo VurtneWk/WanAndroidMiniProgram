@@ -1,4 +1,5 @@
 var app = getApp();
+
 Page({
 
   /**
@@ -9,7 +10,7 @@ Page({
     //banner数据
     banners: [],
     //文章
-    articles:[]
+    articles: []
   },
 
   /**
@@ -20,11 +21,12 @@ Page({
     this.loadArticles();
   },
 
-  loadBanners(){
+  // banner加载
+  loadBanners: function() {
     var that = this;
     wx.request({
       url: app.globalData.HomeBannerUrl,
-      success: function (res) {
+      success: function(res) {
         console.log(res.data)
         if (res.statusCode == 200 && res.data.errorCode == 0) {
           that.setData({
@@ -35,26 +37,31 @@ Page({
     });
   },
 
-  loadArticles(){
+  //文章加载
+  loadArticles() {
     var mThis = this
-
     wx.request({
-      url: "https://www.wanandroid.com/article/list/" + mThis.data.currentPageNum +"/json",
-      success(res){
+      url: "https://www.wanandroid.com/article/list/" + mThis.data.currentPageNum + "/json",
+      success(res) {
         console.log(res.data)
         if (res.statusCode == 200 && res.data.errorCode == 0) {
-          mThis.setData({
-            articles: res.data.data.datas
-          })
+          if (mThis.data.currentPageNum == 0) {
+            mThis.setData({
+              articles: res.data.data.datas
+            })
+          } else {
+            mThis.setData({
+              articles: mThis.data.articles.concat(res.data.data.datas)
+            })
+          }
         }
       },
-      complete(res){
+      complete(res) {
         wx.hideNavigationBarLoading()
         wx.hideLoading()
         wx.stopPullDownRefresh()
-      } 
+      }
     })
-
   },
 
 
@@ -92,7 +99,7 @@ Page({
   onPullDownRefresh: function() {
     wx.showNavigationBarLoading()
     this.setData({
-      currentPageNum : 0
+      currentPageNum: 0
     });
     this.loadBanners();
     this.loadArticles();
@@ -102,6 +109,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
+    //微信loading
     wx.showLoading({
       title: 'loading',
     })

@@ -8,3 +8,7 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.ml8{
+  margin-left: 8px;
+}

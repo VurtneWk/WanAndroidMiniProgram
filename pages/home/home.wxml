@@ -4,7 +4,7 @@
 <swiper indicator-dots='true' autoplay='true' interval='3000' circular='true' indicator-color='#FFF' indicator-active-color='#0288D1' bindtap=''>
   <block wx:for="{{banners}}" wx:key="banner">
     <swiper-item>
-      <image src='{{item.imagePath}}'></image>
+      <image src='{{item.imagePath}}' style='width:100% ; mode="aspectFill"'></image>
     </swiper-item>
   </block>
 </swiper>
@@ -14,12 +14,20 @@
   <block wx:for="{{articles}}" wx:key="article">
     <view class='card'>
       <view class='itemRow'>
-        <text class='articleAuthor'>{{item.author}}</text>
-        <text class='articleNiceDate'>{{item.niceDate}}</text>
+        <!-- 新文章标识 -->
+        <text class='itemTitle'>{{item.title}}</text>
+        <text wx:if="{{item.fresh==true}}" class='newArticle'>新</text>
+        <text wx:if="{{item.tags.length > 0 }}" class='tag'>{{item.tags[0].name}}</text>
       </view>
-      <view class='itemTitle'>{{item.title}}</view>
       <view class='itemRow'>
-        <text class='itemSuperChapterName'>{{superChapterName}}</text>
+        <text class='articleSubTitle'>作者: </text>
+        <text class='articleSubContent'>{{item.author}}</text>
+
+        <text class='articleSubTitle ml8'>分类: </text>
+        <text class='articleSubContent'>{{item.superChapterName}}/{{item.chapterName}}</text>
+
+        <text class='articleSubTitle ml8'>时间: </text>
+        <text class='articleSubContent'>{{item.niceDate}}</text>
       </view>
     </view>
   </block>

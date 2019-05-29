@@ -7,16 +7,55 @@
   border-radius: 5px;
 }
 
+/* ? */
 .itemRow{
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10rpx;
 }
 
+
 .articleAuthor{
   color: #2c2c2c;
   font-size: 0.8rem;
-  
+}
+
+/* 新文章标识 */
+.newArticle{
+  font-size: 0.5rem;
+  color: red;
+  border-style:solid;
+  border-color: red;
+  border-width: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: 5px;
+}
+
+/* tag标识 */
+.tag{
+  font-size: 0.5rem;
+  color: green;
+  border-style:solid;
+  border-color: green;
+  border-width: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: 2px;
+}
+
+.itemTitle{
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.articleSubTitle{
+  font-size: 0.6rem;
+  color: grey;
+}
+
+.articleSubContent{
+  font-size: 0.6rem;
+  color: black;
 }
